@@ -20,10 +20,13 @@ data = load_data(100)
 # Notify the reader that the data was successfully loaded.
 data_load_state.text("Done! (using st.cache)")
 
+
+# Load clusters CSV
 df_clusters = pd.read_csv('data/tweets_cluster_keywords.csv', index_col=0)
 
 df_clusters
 
+# User selection of cluster
 cluster_choice = st.selectbox(
     'Which cluster would you like to see?',
     df_clusters.columns)
@@ -31,6 +34,8 @@ cluster_choice = st.selectbox(
 st.write('You selected:', cluster_choice)
 
 st.subheader('Raw data')
+
+# Filter based on cluster choice input
 st.write(data[data["clusters"] == int(cluster_choice[-1])])
 
 
