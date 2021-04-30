@@ -24,7 +24,7 @@ data = load_data(150)
 # Notify the reader that the data was successfully loaded.
 data_load_state.text("Done! (using st.cache)")
 
-data.dtypes
+#data.dtypes
 
 
 # Load clusters CSV
@@ -51,11 +51,11 @@ st.write(data2[data2["clusters"] == int(cluster_choice[-1])])
 
 # Create a time series of tweets
 
-"""data_timeindex = data.set_index('created_on')
-data_timeindex = data_timeindex[["tweet_text", "clusters"]]
-data_timeindex
+#data_timeindex = data.set_index('created_on')
+#data_timeindex = data_timeindex[["tweet_text", "clusters"]]
+#data_timeindex
 
-st.line_chart(data_timeindex)"""
+#st.line_chart(data_timeindex)
 
 # Show full dataframe on user request
 if st.checkbox('Show raw data'):
